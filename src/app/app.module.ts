@@ -9,6 +9,7 @@ Importamos los componentes
 */
 import { AppComponent } from './app.component';
 import { VideojuegoComponent } from './videojuego/videojuego.component';
+import { ZapatillasComponent } from './zapatillas/zapatillas.component';
 
 /* 
 NgModule, es el decorador, que nos permite configurar los modulos
@@ -20,7 +21,8 @@ NgModule, es el decorador, que nos permite configurar los modulos
 @NgModule({
   declarations: [
     AppComponent,
-    VideojuegoComponent
+    VideojuegoComponent,
+    ZapatillasComponent
   ],
   imports: [
     BrowserModule
