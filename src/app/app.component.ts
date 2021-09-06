@@ -24,4 +24,15 @@ Dentro de la clase definimos propiedades o funcionalidades que tendra la clase, 
 })
 export class AppComponent {
   public title = 'Master de JavaScript y Angular';
+  public mostrar_cursos: boolean = true;
+
+  ocultarCursos(value) {
+    this.mostrar_cursos = value;
+
+    // if (value == false) {
+    //   this.mostrar_cursos = false;
+    // } else {
+    //   this.mostrar_cursos = true;
+    // }
+  }
 }

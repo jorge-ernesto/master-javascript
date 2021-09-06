@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 
 @Component({
    selector: 'videojuego',
    templateUrl: './videojuego.component.html'
 })
-export class VideojuegoComponent {
+export class VideojuegoComponent implements OnInit, DoCheck {
    
    /*
    Propiedades:
@@ -25,7 +25,13 @@ export class VideojuegoComponent {
       this.titulo = "Componente de Videojuegos";
       this.listado = "Listado de los juegos mas populares";
 
-      console.log("Se ha cargado el componente: videojuego.component.ts")
+      console.log("Se ha cargado el componente: videojuego.component.ts");
+   }
+
+   ngOnInit(): void {
+   }
+
+   ngDoCheck(): void {
    }
 
 }
