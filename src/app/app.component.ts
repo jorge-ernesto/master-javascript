@@ -8,6 +8,11 @@ Una serie de imports, que son modulos u objetos, que debemos importar para poder
 */
 import { Component } from '@angular/core';
 
+/*
+Podemos hacer un import de la variable u objeto 'Configuracion', puede tener el nombre que yo quiera, con from debemos indicar donde esta
+*/
+import { Configuracion } from './models/configuracion';
+
 /* 
 @Component, es un decorador, en el decorador se configura el component
   * Con la propiedad selector, le puedo indicar con que etiqueta o directiva de la pagina se cargara este component
@@ -24,6 +29,8 @@ Dentro de la clase definimos propiedades o funcionalidades que tendra la clase, 
 })
 export class AppComponent {
   public title = 'Master de JavaScript y Angular';
+  public descripcion: string;
+  public config;
   public mostrar_cursos: boolean = true;
 
   ocultarCursos(value) {
@@ -34,5 +41,12 @@ export class AppComponent {
     // } else {
     //   this.mostrar_cursos = true;
     // }
+  }
+
+  constructor() {
+    /*Variable de Configuracion*/
+    this.title = Configuracion.titulo;
+    this.descripcion = Configuracion.descripcion;
+    this.config = Configuracion;
   }
 }

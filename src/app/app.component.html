@@ -339,6 +339,16 @@
   </div>
 
   <!-- CONTENIDO -->
+  <span [ngStyle]="{
+                    'background'    : config.fondo,
+                    'padding'       : '20px',
+                    'padding-bottom': '0px',
+                    'border'        : '5px solid black',
+                    'border-color'  : config.color
+                  }">
+    <p>{{ descripcion }}</p><br>
+  </span>
+
   <button (click)="ocultarCursos(false)" *ngIf="mostrar_cursos">Ocultar Componente Cursos</button> <!-- Se muestra boton 'Ocultar' cuando mostrar_cursos este true -->
   <button (click)="ocultarCursos(true)" *ngIf="!mostrar_cursos">Mostrar Componente Cursos</button> <!-- Se muestra boton 'Mostrar' cuando mostrar_cursos este false -->
 
