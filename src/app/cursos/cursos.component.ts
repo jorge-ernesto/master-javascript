@@ -24,28 +24,28 @@ export class CursosComponent implements OnInit, DoCheck, OnDestroy {
   public titulo: string = 'Componente de Cursos';
 
   constructor() { 
-    console.log("Se ha cargado el componente: cursos.component.ts");
+    //console.log("Se ha cargado el componente: cursos.component.ts");
   }
 
   /* Metodo 'ngOnInit'
     * Se ejecutara este metodo cada que se cargue el component
   */
   ngOnInit(): void {
-    console.log('ngOnInit de cursos.component.ts ejecutado');
+    //console.log('ngOnInit de cursos.component.ts ejecutado');
   }
 
   /* Metodo 'ngDoCheck'
     * Se ejecutara cuando se realiza un cambio en el codigo
   */
   ngDoCheck(): void {
-    console.log('ngDoCheck de cursos.component.ts ejecutado');
+    //console.log('ngDoCheck de cursos.component.ts ejecutado');
   }
 
   /* Metodo 'ngOnDetroy'
     * Se ejecutara cuando se destruye un componente dentro del ciclo de vida
   */
   ngOnDestroy(): void {
-    console.log('ngOnDestroy de cursos.component.ts ejecutado')
+    //console.log('ngOnDestroy de cursos.component.ts ejecutado')
   }
 
   cambiarTitulo() {
