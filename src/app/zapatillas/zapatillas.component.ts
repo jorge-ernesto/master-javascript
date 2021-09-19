@@ -10,11 +10,13 @@ export class ZapatillasComponent implements OnInit {
    public titulo    : string = "Componente de zapatillas";
    public zapatillas: Array<Zapatilla>; //Esto sera un array de objetos de tipo Zapatilla
    public marcas    : String[]; //Esto sera un array de tipo String, todos los datos que habra dentro seran String
+   public color     : string;
 
    constructor(){
       // console.log("Se ha cargado el componente: zapatillas.component.ts");
 
       //Le damos valores al array            
+      this.color      = 'yellow';      
       this.marcas     = []; //this.marcas = new Array(); //Push no se puede utilizar en un objeto que esta 'undefined'
       this.zapatillas = [ //Zapatillas es igual a un array
          new Zapatilla('Reebook Classic', 'Reebook', 'Blanco', 80,  true), //Aqui creamos el objeto, utilizando mi molde, utilizando mi clase
