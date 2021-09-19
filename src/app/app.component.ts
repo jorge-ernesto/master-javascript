@@ -28,8 +28,8 @@ Dentro de la clase definimos propiedades o funcionalidades que tendra la clase, 
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public title = 'Master de JavaScript y Angular';
-  public descripcion: string;
+  public title         : string = 'Master de JavaScript y Angular';
+  public descripcion   : string;
   public config;
   public mostrar_cursos: boolean = true;
 
@@ -45,8 +45,8 @@ export class AppComponent {
 
   constructor() {
     /*Variable de Configuracion*/
-    this.title = Configuracion.titulo;
+    this.title       = Configuracion.titulo;
     this.descripcion = Configuracion.descripcion;
-    this.config = Configuracion;
+    this.config      = Configuracion;
   }
 }

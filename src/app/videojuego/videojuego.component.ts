@@ -11,7 +11,7 @@ export class VideojuegoComponent implements OnInit, DoCheck {
       * Podemos definir dentro de la clase una serie de propiedades publicas, y podemos definir que tipo de dato es
       * Podemos pasar el valor que yo guarde en estas propiedades a mi vista
    */
-   public titulo: string;
+   public titulo : string;
    public listado: string;
 
    /*
@@ -22,10 +22,10 @@ export class VideojuegoComponent implements OnInit, DoCheck {
       * Con las dobles llaves se imprime el valor que tenga la propiedad titulo del componente, eso se llama interpolacion, binding x interpolacion, se muestra el valor de una propiedad en la vista
    */
    constructor(){
-      this.titulo = "Componente de Videojuegos";
-      this.listado = "Listado de los juegos mas populares";
+      // console.log("Se ha cargado el componente: videojuego.component.ts");
 
-      console.log("Se ha cargado el componente: videojuego.component.ts");
+      this.titulo  = "Componente de Videojuegos";
+      this.listado = "Listado de los juegos mas populares";      
    }
 
    ngOnInit(): void {
