@@ -3,6 +3,7 @@ Importamos los dos modulos o los dos objetos, que se encargan de hacer esto, que
 */
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'; //Modulo para que funcione Two way data-binding en formulario
 
 /*
 Importamos los componentes
@@ -27,7 +28,8 @@ NgModule, es el decorador, que nos permite configurar los modulos
     CursosComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule //Una vez que tenemos el modulo importado, lo tenemos que cargar en los imports que es el array dentro de NgModule, que nos permite cargar modulos internos de Angular de modulos externos que hayamos cargados
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,16 +1,22 @@
 <h2>{{titulo}}</h2>
 
-<p>Compra las zapatillas de las mejores marcas</p>
+<!-- Two way data-binding y evento click -->
+<input type="text" [(ngModel)]="mi_marca" placeholder="Ingresar marca">
+<button (click)="getMarca()">Mostrar marca</button>
+<button (click)="addMarca()">Agregar marca</button>
+<p>{{mi_marca}}</p>
+
+<!-- Directiva bucle ngFor -->
+<p>Compra las zapatillas de las mejores marcas:</p>
 <ul>
-   <li *ngFor="let marca of marcas; let indice = index">{{indice + ' ' + marca}}</li>
+   <li *ngFor="let marca of marcas; let indice = index">{{indice + ' - ' + marca}}</li>
 </ul>
 
+<!-- Directiva condicional ngIf -->
 <p>Las deportivas que tenemos disponibles son:</p>
 <ul>
    <li *ngFor="let zapatilla of zapatillas">
-      <span [ngStyle]="{ 
-                        'text-decoration': zapatilla.stock == false ? 'line-through' : 'none' 
-                       }">
+      <span [ngStyle]="{'text-decoration': zapatilla.stock == false ? 'line-through' : 'none'}">
          {{zapatilla.nombre}} - <strong>{{zapatilla.precio}}$</strong>
       </span>
 
@@ -19,6 +25,7 @@
    </li>
 </ul>
 
+<!-- Directiva ngSwitch -->
 <p>El color de la mayoria de nuestras zapatillas es: </p>
 <ul [ngSwitch]="color">
    <li *ngSwitchCase="'yellow'">

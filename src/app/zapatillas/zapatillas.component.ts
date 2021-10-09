@@ -11,19 +11,21 @@ export class ZapatillasComponent implements OnInit {
    public zapatillas: Array<Zapatilla>; //Esto sera un array de objetos de tipo Zapatilla
    public marcas    : String[]; //Esto sera un array de tipo String, todos los datos que habra dentro seran String
    public color     : string;
+   public mi_marca  : string;
 
    constructor(){
       // console.log("Se ha cargado el componente: zapatillas.component.ts");
 
-      //Le damos valores al array            
-      this.color      = 'yellow';      
-      this.marcas     = []; //this.marcas = new Array(); //Push no se puede utilizar en un objeto que esta 'undefined'
+      //Le damos valores al array                  
       this.zapatillas = [ //Zapatillas es igual a un array
          new Zapatilla('Reebook Classic', 'Reebook', 'Blanco', 80,  true), //Aqui creamos el objeto, utilizando mi molde, utilizando mi clase
          new Zapatilla('Nike Runner MD' , 'Nike'   , 'Negras', 60,  true),
          new Zapatilla('Adidas Yezzy'   , 'Adidas' , 'Gris'  , 180, false),
          new Zapatilla('Nike Airmax'    , 'Nike'   , 'Rojas' , 190, true),
-      ]
+      ];
+      this.marcas = []; //this.marcas = new Array(); //Push no se puede utilizar en un objeto que esta 'undefined'
+      this.color  = 'yellow';
+      this.mi_marca = 'Fila';
    }
 
    ngOnInit(): void {
@@ -44,6 +46,14 @@ export class ZapatillasComponent implements OnInit {
          }  
       });
       console.log('marcas', this.marcas);
+   }
+
+   getMarca(){
+      alert(this.mi_marca);
+   }
+
+   addMarca(){
+      this.marcas.push(this.mi_marca);
    }
 
 }
