@@ -26,7 +26,9 @@
 </ul>
 
 <!-- Directiva ngSwitch -->
-<p>El color de la mayoria de nuestras zapatillas es: </p>
+<p>El color de la mayoria de nuestras zapatillas es:</p>
+<input type="text" [(ngModel)]="color" placeholder="Ingresar color">
+
 <ul [ngSwitch]="color">
    <li *ngSwitchCase="'yellow'">
       El color predominante es <span [ngStyle]="{background: color}">amarillo</span>
@@ -39,5 +41,8 @@
    </li>
    <li *ngSwitchCase="'orange'">
       El color predominante es <span [ngStyle]="{background: color}">naranja</span>
+   </li>
+   <li *ngSwitchDefault>
+      El color predeterminado puede ser yellow, red, blue u orange
    </li>
 </ul>

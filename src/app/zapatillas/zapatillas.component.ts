@@ -23,8 +23,8 @@ export class ZapatillasComponent implements OnInit {
          new Zapatilla('Adidas Yezzy'   , 'Adidas' , 'Gris'  , 180, false),
          new Zapatilla('Nike Airmax'    , 'Nike'   , 'Rojas' , 190, true),
       ];
-      this.marcas = []; //this.marcas = new Array(); //Push no se puede utilizar en un objeto que esta 'undefined'
-      this.color  = 'yellow';
+      this.marcas   = []; //this.marcas = new Array(); //Push no se puede utilizar en un objeto que esta 'undefined'
+      this.color    = 'yellow';
       this.mi_marca = 'Fila';
    }
 
