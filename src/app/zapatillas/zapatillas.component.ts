@@ -34,11 +34,15 @@ export class ZapatillasComponent implements OnInit {
    }  
 
    /**
-    * Metodo para recorrer de manera clasica con un foreach de Javascript 
-    * Metodo forEach, es de los nuevos estandares de ECMAScript 6 (ES6): https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
-    * Metodo indexOf, sirve para localizar valores en un array: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+    * Metodo para recorrer de manera clasica con un foreach de Javascript
+    * 
+    * Metodo forEach, es de los nuevos estandares de ECMAScript 6 (ES6): 
+    * @url https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+    * 
+    * Metodo indexOf, sirve para localizar valores en un array: 
+    * @url https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
     */
-   getMarcas(){             
+   public getMarcas(){             
       this.zapatillas.forEach((zapatilla, index) => { //Foreach en JavaScript         
          // console.log(zapatilla, index);
          if (this.marcas.indexOf(zapatilla.marca) < 0) { //Valida que en el array marcas no existan ya los valores por insertar para que no se repitan
@@ -48,12 +52,24 @@ export class ZapatillasComponent implements OnInit {
       console.log('marcas', this.marcas);
    }
 
-   getMarca(){
+   public getMarca(){
       alert(this.mi_marca);
    }
 
-   addMarca(){
+   /**
+    * Agregamos elemento a array usando metodo push
+    * @url https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/push
+    */
+   public addMarca(){
       this.marcas.push(this.mi_marca);
+   }
+
+   /**
+    * Eliminamos elemento de array con su indice usando metodo splice
+    * @url https://www.oscarlijo.com/blog/eliminar-elementos-de-un-array-en-javascript/    
+    */
+   public deleteMarca(indice){
+      this.marcas.splice(indice, 1);
    }
 
 }

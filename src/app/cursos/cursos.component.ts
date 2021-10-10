@@ -48,7 +48,7 @@ export class CursosComponent implements OnInit, DoCheck, OnDestroy {
     //console.log('ngOnDestroy de cursos.component.ts ejecutado')
   }
 
-  cambiarTitulo() {
+  public cambiarTitulo() {
     this.titulo = 'Nuevo titulo del componente Cursos';
   }
 

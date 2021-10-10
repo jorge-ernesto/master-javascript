@@ -33,7 +33,14 @@ export class AppComponent {
   public config;
   public mostrar_cursos: boolean = true;
 
-  ocultarCursos(value) {
+  constructor() {
+    /*Variable de Configuracion*/
+    this.title       = Configuracion.titulo;
+    this.descripcion = Configuracion.descripcion;
+    this.config      = Configuracion;
+  }
+
+  public ocultarCursos(value) {
     this.mostrar_cursos = value;
 
     // if (value == false) {
@@ -41,12 +48,5 @@ export class AppComponent {
     // } else {
     //   this.mostrar_cursos = true;
     // }
-  }
-
-  constructor() {
-    /*Variable de Configuracion*/
-    this.title       = Configuracion.titulo;
-    this.descripcion = Configuracion.descripcion;
-    this.config      = Configuracion;
   }
 }
