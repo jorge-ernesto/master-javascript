@@ -4,7 +4,7 @@
 
 
 <!-- Two way data-binding y evento click -->
-<input type="text" [(ngModel)]="mi_marca" placeholder="Ingresar marca"><br>
+<input type="text" [(ngModel)]="mi_marca" placeholder="Ingresar marca" (blur)="onBlur()" (keyup.enter)="mostrarPalabra()"><br>
 <button (click)="getMarca()">Mostrar marca</button><br>
 <button (click)="addMarca()">Agregar marca</button><br>
 <p>{{mi_marca}}</p>
@@ -43,16 +43,16 @@
 
 <ul [ngSwitch]="color">
    <li *ngSwitchCase="'yellow'">
-      El color predominante es <span [ngStyle]="{background: color}">amarillo</span>
+      El color predeterminado es <span [ngStyle]="{background: color}">amarillo</span>
    </li>
    <li *ngSwitchCase="'red'">
-      El color predominante es <span [ngStyle]="{background: color}">rojo</span>
+      El color predeterminado es <span [ngStyle]="{background: color}">rojo</span>
    </li>
    <li *ngSwitchCase="'blue'">
-      El color predominante es <span [ngStyle]="{background: color}">azul</span>
+      El color predeterminado es <span [ngStyle]="{background: color}">azul</span>
    </li>
    <li *ngSwitchCase="'orange'">
-      El color predominante es <span [ngStyle]="{background: color}">naranja</span>
+      El color predeterminado es <span [ngStyle]="{background: color}">naranja</span>
    </li>
    <li *ngSwitchDefault>
       El color predeterminado puede ser yellow, red, blue u orange

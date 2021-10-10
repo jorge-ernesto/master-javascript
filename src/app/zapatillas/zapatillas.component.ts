@@ -25,7 +25,7 @@ export class ZapatillasComponent implements OnInit {
       ];
       this.marcas   = []; //this.marcas = new Array(); //Push no se puede utilizar en un objeto que esta 'undefined'
       this.color    = 'yellow';
-      this.mi_marca = 'Fila';
+      this.mi_marca = 'Marca';
    }
 
    ngOnInit(): void {
@@ -70,6 +70,14 @@ export class ZapatillasComponent implements OnInit {
     */
    public deleteMarca(indice){
       this.marcas.splice(indice, 1);
+   }
+
+   public onBlur(){
+      console.log('Has salido del input');
+   }
+
+   public mostrarPalabra(){
+      alert(this.mi_marca);
    }
 
 }
