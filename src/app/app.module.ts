@@ -4,6 +4,7 @@ Importamos los dos modulos o los dos objetos, que se encargan de hacer esto, que
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; //Modulo para que funcione Two way data-binding en formulario
+import { routing, appRoutingProviders } from './app.routing'; //Modulo de rutas
 
 /*
 Importamos los componentes
@@ -12,6 +13,7 @@ import { AppComponent } from './app.component';
 import { VideojuegoComponent } from './videojuego/videojuego.component';
 import { ZapatillasComponent } from './zapatillas/zapatillas.component';
 import { CursosComponent } from './cursos/cursos.component';
+import { HomeComponent } from './home/home.component';
 
 /* 
 NgModule, es el decorador, que nos permite configurar los modulos
@@ -25,13 +27,17 @@ NgModule, es el decorador, que nos permite configurar los modulos
     AppComponent,
     VideojuegoComponent,
     ZapatillasComponent,
-    CursosComponent
+    CursosComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule //Una vez que tenemos el modulo importado, lo tenemos que cargar en los imports que es el array dentro de NgModule, que nos permite cargar modulos internos de Angular de modulos externos que hayamos cargados
+    FormsModule, //Una vez que tenemos el modulo importado, lo tenemos que cargar en los imports que es el array dentro de NgModule, que nos permite cargar modulos internos de Angular de modulos externos que hayamos cargados
+    routing,
   ],
-  providers: [],
+  providers: [
+    appRoutingProviders
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
