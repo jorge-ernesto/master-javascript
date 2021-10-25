@@ -24,6 +24,7 @@ export class ExternoComponent implements OnInit {
   }
 
   public getUser(userId) {
+    this.user = null; //De este modo siempre cargara el mensaje 'Cargando...'
     this._peticionesService.getUser(userId).subscribe( //Un Obsersable siempre tiene un subscribe, para suscribirme y recoger el resultado que nos devuelve
       //El metodo subscribe tiene 2 funciones de callback
       result => { //Una que recoge el resultado
@@ -32,6 +33,7 @@ export class ExternoComponent implements OnInit {
         console.log('user:', this.user)
       },
       error => { //Otra que recoge el posible error
+        this.user = null;
         console.log(<any>error); //Recogemos el error de cualquier error que haga
       }
     );
