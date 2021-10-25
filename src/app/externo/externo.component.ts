@@ -37,6 +37,7 @@ export class ExternoComponent implements OnInit {
         console.log(<any>error); //Recogemos el error de cualquier error que haga
       }
     );
+    console.log('Esto puede ejecutarse primero, demostrando que una peticion AJAX es asincrona');
   }
 
 }
