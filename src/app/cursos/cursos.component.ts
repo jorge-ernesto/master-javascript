@@ -70,10 +70,17 @@ export class CursosComponent implements OnInit, DoCheck, OnDestroy {
       let nombre_    = params['nombre'];
       let followers_ = params['followers'];
 
+      if(this.nombre == 'ninguno'){
+        this._router.navigate(['/home']);
+      }
+
       console.log('Parametros:', params);
       console.log('Nombre:'    , params.nombre   , params['nombre']);
       console.log('Apellidos:' , params.followers, params['followers']);
     });
   }
 
+  public redirigir() {
+    this._router.navigate(['/cursos', 'Jorge', 30]);
+  }
 }
