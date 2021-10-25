@@ -28,6 +28,11 @@ export class VideojuegoComponent implements OnInit, DoCheck {
       this.listado = "Listado de los juegos mas populares";      
    }
 
+   /**
+   ngOnInit:
+      * Se ejecutara este metodo cada que se cargue el component
+      * Lo mas normal, es asignarle aqui las funciones que cargaran cuando se inicialice el componente
+   */
    ngOnInit(): void {
    }
 

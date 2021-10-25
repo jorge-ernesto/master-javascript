@@ -30,7 +30,7 @@ export class CursosComponent implements OnInit, DoCheck, OnDestroy {
     private _route: ActivatedRoute,
     private _router: Router,
   ) { 
-    //console.log("Se ha cargado el componente: cursos.component.ts");
+    console.log("Se ha cargado el componente: cursos.component.ts");
   }
 
   /* Metodo 'ngOnInit'

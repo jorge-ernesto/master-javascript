@@ -1,1 +1,9 @@
-<p>externo works!</p>
+<hr>
+<!-- <p>externo works!</p> -->
+
+<input type="text" [(ngModel)]="userId" placeholder="Ingresar ID" (keyup)="getUser(userId)"><br>
+
+<div *ngIf="user">
+   <img src="{{user.avatar}}" width="200" alt="">
+   <h2>{{user.first_name + ' ' + user.last_name}}</h2>
+</div>

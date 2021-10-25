@@ -13,7 +13,7 @@ export class PeticionesService{
       this.url = 'https://reqres.in/';
    }
 
-   public getUser(): Observable<any>{
-      return this._http.get(this.url + 'api/users/2');
+   public getUser(userId): Observable<any>{ //Esto nos devuelve un Observable de cualquier tipo
+      return this._http.get(this.url + 'api/users/' + userId);
    }
 }

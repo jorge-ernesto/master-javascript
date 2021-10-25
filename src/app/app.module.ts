@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; //Modulo para que funcione Two way data-binding en formulario
 import { routing, appRoutingProviders } from './app.routing'; //Modulo de rutas
+import { HttpClientModule } from '@angular/common/http'; //Modulo para que funcione y podamos trabajador con las peticiones AJAX en nuestro proyecto
 
 /*
 Importamos los componentes
@@ -35,7 +36,8 @@ NgModule, es el decorador, que nos permite configurar los modulos
   imports: [
     BrowserModule,
     FormsModule, //Una vez que tenemos el modulo importado, lo tenemos que cargar en los imports que es el array dentro de NgModule, que nos permite cargar modulos internos de Angular de modulos externos que hayamos cargados
-    routing,
+    routing, //El routing es un modulo y tenemos que cargarlo en los imports, aqui esta toda la configuracion de las rutas
+    HttpClientModule //Una vez que tenemos el modulo importado, tenemos que cargarlo en imports, para poder utilizar en todas partes de nuestro codigo del proyecto
   ],
   providers: [
     appRoutingProviders
