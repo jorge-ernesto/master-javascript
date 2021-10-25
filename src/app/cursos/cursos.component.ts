@@ -10,6 +10,7 @@ Hooks / Eventos ciclo de vida:
     * El metodo o hook OnDestroy, nos servira para que se ejecute algo antes de eliminar la instancia de un componente
 */
 import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 /* Hook 'OnInit' y 'DoCkeck'
   * Se implementa en la clase ya que es una interfaz y nos permite utilizar el metodo 'ngOnInit' dentro de la clase
@@ -21,9 +22,14 @@ import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
 })
 export class CursosComponent implements OnInit, DoCheck, OnDestroy {
 
-  public titulo: string = 'Componente de Cursos';
+  public titulo   : string = 'Componente de Cursos';
+  public nombre   : string;
+  public followers: number;
 
-  constructor() { 
+  constructor(
+    private _route: ActivatedRoute,
+    private _router: Router,
+  ) { 
     //console.log("Se ha cargado el componente: cursos.component.ts");
   }
 
@@ -32,6 +38,7 @@ export class CursosComponent implements OnInit, DoCheck, OnDestroy {
   */
   ngOnInit(): void {
     //console.log('ngOnInit de cursos.component.ts ejecutado');
+    this.obtenerParametros();
   }
 
   /* Metodo 'ngDoCheck'
@@ -50,6 +57,23 @@ export class CursosComponent implements OnInit, DoCheck, OnDestroy {
 
   public cambiarTitulo() {
     this.titulo = 'Nuevo titulo del componente Cursos';
+  }
+
+  public obtenerParametros() {
+    //Sacamos los parametros de la url
+    this._route.params.subscribe((params: Params) => {
+      //Nombres para ser utilizados en las vistas
+      this.nombre    = params['nombre'];
+      this.followers = +params['followers'];
+    
+      //Tambien podemos asignar a variables locales de la funcion
+      let nombre_    = params['nombre'];
+      let followers_ = params['followers'];
+
+      console.log('Parametros:', params);
+      console.log('Nombre:'    , params.nombre   , params['nombre']);
+      console.log('Apellidos:' , params.followers, params['followers']);
+    });
   }
 
 }

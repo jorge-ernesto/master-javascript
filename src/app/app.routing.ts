@@ -10,12 +10,14 @@ import { HomeComponent } from './home/home.component';
 
 // Array de rutas
 const appRoutes: Routes = [
-   {path: ''          , component: HomeComponent},
-   {path: 'home'      , component: HomeComponent}, //Es recomendable crear una ruta alternativa para el home, esta es la ruta que se utilizaria para que funcione bien la directiva routerLinkActive
-   {path: 'videojuego', component: VideojuegoComponent},
-   {path: 'zapatillas', component: ZapatillasComponent},
-   {path: 'cursos'    , component: CursosComponent},
-   {path: '**'        , component: HomeComponent}
+   {path: ''                         , component: HomeComponent},
+   {path: 'home'                     , component: HomeComponent}, //Es recomendable crear una ruta alternativa para el home, esta es la ruta que se utilizaria para que funcione bien la directiva routerLinkActive
+   {path: 'videojuego'               , component: VideojuegoComponent},
+   {path: 'zapatillas'               , component: ZapatillasComponent},
+   {path: 'cursos'                   , component: CursosComponent},
+   {path: 'cursos/:nombre'           , component: CursosComponent},
+   {path: 'cursos/:nombre/:followers', component: CursosComponent},
+   {path: '**'                       , component: HomeComponent}
 ];
 
 // Exportar el modulo del router

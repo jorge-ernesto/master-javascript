@@ -14,7 +14,7 @@ export class ZapatillasComponent implements OnInit {
    public mi_marca  : string;
 
    constructor(){
-      // console.log("Se ha cargado el componente: zapatillas.component.ts");
+      console.log("Se ha cargado el componente: zapatillas.component.ts");
 
       //Le damos valores al array                  
       this.zapatillas = [ //Zapatillas es igual a un array
