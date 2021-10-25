@@ -345,6 +345,14 @@
                     'border-color': config.color,
                     'width'       : '100%' }">    
     <p style="text-align:center; font-size:20px;">{{ descripcion }}</p><br>
+    
+    <!--Buttons de navegacion -->
+    <div style="text-align: center;">
+      <button [routerLink]="['/']">Componente Home</button>
+      <button [routerLink]="['/videojuego']">Componente Videojuego</button>
+      <button [routerLink]="['/zapatillas']">Componente Zapatillas</button>
+      <button [routerLink]="['/cursos']">Componente Cursos</button>
+    </div>
 
     <!-- Se muestra boton 'Ocultar' cuando mostrar_cursos este true -->
     <!-- <button (click)="ocultarCursos(false)" *ngIf="mostrar_cursos">Ocultar Componente Cursos</button>  -->
