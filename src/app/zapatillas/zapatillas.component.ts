@@ -7,7 +7,7 @@ import { Zapatilla } from '../models/zapatilla' //Importamos la clase del modelo
 })
 export class ZapatillasComponent implements OnInit {
    
-   public titulo    : string = "Componente de zapatillas";
+   public titulo    : string = "Componente de Zapatillas";
    public zapatillas: Array<Zapatilla>; //Esto sera un array de objetos de tipo Zapatilla
    public marcas    : String[]; //Esto sera un array de tipo String, todos los datos que habra dentro seran String
    public color     : string;

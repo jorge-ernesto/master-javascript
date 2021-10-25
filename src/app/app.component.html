@@ -348,10 +348,10 @@
     
     <!--Buttons de navegacion -->
     <div style="text-align: center;">
-      <button [routerLink]="['/']">Componente Home</button>
-      <button [routerLink]="['/videojuego']">Componente Videojuego</button>
-      <button [routerLink]="['/zapatillas']">Componente Zapatillas</button>
-      <button [routerLink]="['/cursos']">Componente Cursos</button>
+      <button [routerLink]="['/home']"       [routerLinkActive]="['active']">Componente Home</button>
+      <button [routerLink]="['/videojuego']" [routerLinkActive]="['active']">Componente Videojuego</button>
+      <button [routerLink]="['/zapatillas']" [routerLinkActive]="['active']">Componente Zapatillas</button>
+      <button [routerLink]="['/cursos']"     [routerLinkActive]="['active']">Componente Cursos</button>
     </div>
 
     <!-- Se muestra boton 'Ocultar' cuando mostrar_cursos este true -->
