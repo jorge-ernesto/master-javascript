@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Zapatilla } from '../models/zapatilla' //Importamos la clase del modelo Zapatilla
+import { Zapatilla } from '../models/zapatilla'; //Importamos la clase del modelo Zapatilla
+import { ZapatillaService } from '../services/zapatilla.service'; //Importamos el servicio ZapatillaService
 
 @Component({
    selector: 'zapatillas',
-   templateUrl: './zapatillas.component.html'
+   templateUrl: './zapatillas.component.html',
+   providers: [ZapatillaService] //El servicio no lo podemos utilizar hasta que no lo injectemos como un provider, como un servicio de nuestro componente, se declaran dentro del array
 })
 export class ZapatillasComponent implements OnInit {
    
@@ -13,16 +15,15 @@ export class ZapatillasComponent implements OnInit {
    public color     : string;
    public mi_marca  : string;
 
-   constructor(){
+   constructor(
+      private _zapatillaService: ZapatillaService //Lo injectamos como dependencia dentro de una propiedad, de este modo podemos utilizar el servicio
+   ){
       console.log("Se ha cargado el componente: zapatillas.component.ts");
 
       //Le damos valores al array                  
-      this.zapatillas = [ //Zapatillas es igual a un array
-         new Zapatilla('Reebook Classic', 'Reebook', 'Blanco', 80 , true), //Aqui creamos el objeto, utilizando mi molde, utilizando mi clase
-         new Zapatilla('Nike Runner MD' , 'Nike'   , 'Negras', 60 , true),
-         new Zapatilla('Adidas Yezzy'   , 'Adidas' , 'Gris'  , 180, false),
-         new Zapatilla('Nike Airmax'    , 'Nike'   , 'Rojas' , 190, true),
-      ];
+      this.zapatillas = this._zapatillaService.getZapatillas();
+      // alert(this._zapatillaService.getTexto());
+
       this.marcas   = []; //this.marcas = new Array(); //Push no se puede utilizar en un objeto que esta 'undefined'
       this.color    = 'yellow';
       this.mi_marca = 'Marca';
