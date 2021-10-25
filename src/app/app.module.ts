@@ -14,6 +14,7 @@ import { VideojuegoComponent } from './videojuego/videojuego.component';
 import { ZapatillasComponent } from './zapatillas/zapatillas.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { HomeComponent } from './home/home.component';
+import { ExternoComponent } from './externo/externo.component';
 
 /* 
 NgModule, es el decorador, que nos permite configurar los modulos
@@ -28,7 +29,8 @@ NgModule, es el decorador, que nos permite configurar los modulos
     VideojuegoComponent,
     ZapatillasComponent,
     CursosComponent,
-    HomeComponent
+    HomeComponent,
+    ExternoComponent
   ],
   imports: [
     BrowserModule,
