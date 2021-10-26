@@ -11,12 +11,14 @@ export class ExternoComponent implements OnInit {
 
   public user  : Array<any>;
   public userId: number;
+  public fecha : any; 
 
   constructor(
     private _peticionesService: PeticionesService
   ) { 
     console.log("Se ha cargado el componente: externo.component.ts");
     this.userId = 1;
+    this.fecha  = new Date(2019, 5, 20);
   }
 
   ngOnInit(): void {
