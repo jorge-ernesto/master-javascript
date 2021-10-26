@@ -17,6 +17,11 @@ import { CursosComponent } from './cursos/cursos.component';
 import { HomeComponent } from './home/home.component';
 import { ExternoComponent } from './externo/externo.component';
 
+/*
+Importamos pipes 
+*/
+import { CalculadoraPipe } from './services/calculadora.pipe';
+
 /* 
 NgModule, es el decorador, que nos permite configurar los modulos
   * Indicamos declarations, nos sirve para cargar nuestros componentes, nuestros pipes y nuestras directivas
@@ -31,7 +36,8 @@ NgModule, es el decorador, que nos permite configurar los modulos
     ZapatillasComponent,
     CursosComponent,
     HomeComponent,
-    ExternoComponent
+    ExternoComponent,
+    CalculadoraPipe
   ],
   imports: [
     BrowserModule,

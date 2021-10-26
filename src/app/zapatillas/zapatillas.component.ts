@@ -30,7 +30,8 @@ export class ZapatillasComponent implements OnInit {
    }
 
    ngOnInit(): void {
-      console.log('zapatillas', this.zapatillas);            
+      console.log('zapatillas', this.zapatillas);
+      // console.log('zapatillas', JSON.stringify(this.zapatillas));            
       this.getMarcas();      
    }  
 
