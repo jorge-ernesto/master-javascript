@@ -41,5 +41,5 @@
         </small>
     </div>
 
-   <input type="submit" value="Registrame" class="btn btn-success" [disabled]="formContacto.invalid">
+   <input type="submit" value="Registrame" class="btn btn-success" [disabled]="!formContacto.form.valid">
 </form>
