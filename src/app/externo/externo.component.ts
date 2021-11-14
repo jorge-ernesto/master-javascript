@@ -11,7 +11,12 @@ export class ExternoComponent implements OnInit {
 
   public user  : Array<any>;
   public userId: number;
-  public fecha : any; 
+  public fecha : any;
+  
+  //Variables para usar en el formulario "Crear Usuario"
+  public new_user : any;
+  public new_user_: any;
+  public status   : string;
 
   constructor(
     private _peticionesService: PeticionesService
@@ -19,6 +24,21 @@ export class ExternoComponent implements OnInit {
     console.log("Se ha cargado el componente: externo.component.ts");
     this.userId = 1;
     this.fecha  = new Date(2019, 5, 20);
+    
+    /**
+     * Metodo para asignar objeto a new_user, usando el metodo new Object()
+     * @url https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Working_with_Objects
+     */
+    this.new_user      = new Object();
+    this.new_user.name = "";
+    this.new_user.job  = "";
+    // console.log('new_user', this.new_user);
+
+    /**
+     * Metodo para asignar objeto a new_user, funciona igual que el metodo new Object()
+     */
+    this.new_user_ = { "name": "", "job": "" };
+    // console.log('new_user_', this.new_user_);
   }
 
   ngOnInit(): void {
@@ -40,6 +60,25 @@ export class ExternoComponent implements OnInit {
       }
     );
     console.log('Esto puede ejecutarse primero, demostrando que una peticion AJAX es asincrona');
+  }
+
+  public onSubmit(form){
+    console.log("Evento submit lanzado"); 
+    console.log('new_user', this.new_user);  
+    
+    this._peticionesService.addUser(this.new_user).subscribe(
+      result => {                          
+        this.status    = 'success';
+        this.new_user_ = result;                    
+        form.reset();
+        
+        console.log(result);  
+      },
+      error => {
+        this.status = 'error';
+        console.log(<any>error);
+      }
+    );
   }
 
 }

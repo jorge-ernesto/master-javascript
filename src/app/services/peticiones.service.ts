@@ -16,4 +16,16 @@ export class PeticionesService{
    public getUser(userId): Observable<any>{ //Esto nos devuelve un Observable de cualquier tipo
       return this._http.get(this.url + 'api/users/' + userId);
    }
+
+   public addUser(user): Observable<any>{
+      let json = JSON.stringify(user);       
+      let params = 'json='+json;      
+      let headers = new HttpHeaders().set('Content-Type', 'application/json');
+      
+      console.log('json', json);
+      console.log('params', params);
+      
+      return this._http.post(this.url+'api/users', json, {headers: headers});
+      // return <any>null;
+   }
 }
